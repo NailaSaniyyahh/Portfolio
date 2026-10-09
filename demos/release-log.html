@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Release Log Demo — Trace Developer</title>
+  <meta name="description" content="Search a fictional release history by text and type.">
+  <meta name="robots" content="noindex,follow">
+  <link rel="icon" href="../assets/mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/vendor/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/style.css">
+  <script src="../assets/canvas-bg.js" defer></script>
+  <script src="../assets/demo.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <canvas id="bg-canvas" class="bg-canvas" aria-hidden="true"></canvas>
+
+  <div class="site-wrapper">
+    <main id="main" class="demo-page py-4">
+      <header class="demo-top">
+        <div>
+          <span class="eyebrow">TRACE / WORKING DEMO</span>
+          <h1>Release Log</h1>
+          <p>Find the change you came here for.</p>
+        </div>
+        <a class="button secondary" href="../release-log.html">Read the case study ↗</a>
+      </header>
+
+      <form class="demo-toolbar" data-filter-form data-label="releases" hidden>
+        <div class="field search">
+          <label for="search">Search releases</label>
+          <input id="search" name="q" type="search" autocomplete="off" placeholder="Search titles and details…">
+        </div>
+        <div class="field">
+          <label for="category">Filter by type</label>
+          <select id="category" name="category">
+            <option value="all">All types</option>
+            <option value="feature">Feature</option>
+            <option value="fix">Fix</option>
+            <option value="maintenance">Maintenance</option>
+          </select>
+        </div>
+        <button class="button secondary" type="button" data-clear>Clear filters</button>
+      </form>
+
+      <p class="demo-status" role="status" aria-live="polite" data-result-count>All sample releases shown.</p>
+      <p class="empty-state" data-empty hidden>No matching releases. Try a different search or clear the filters.</p>
+
+      <article class="release-item" data-entry data-category="feature">
+        <div class="release-meta">
+          <strong>v1.3.0</strong>
+          <time datetime="2026-09-24" class="text-muted ms-2">2026-09-24</time>
+          <span class="badge-status ms-auto">Feature</span>
+        </div>
+        <h2>A faster route to the right update</h2>
+        <ul>
+          <li>Search titles and release details together with instant debouncing.</li>
+          <li>Combine text search with a release-type category filter.</li>
+        </ul>
+      </article>
+
+      <article class="release-item" data-entry data-category="fix">
+        <div class="release-meta">
+          <strong>v1.2.2</strong>
+          <time datetime="2026-09-12" class="text-muted ms-2">2026-09-12</time>
+          <span class="badge-status ms-auto">Fix</span>
+        </div>
+        <h2>Small fixes, clearer feedback</h2>
+        <ul>
+          <li>Added a readable message when no releases match.</li>
+          <li>Restored search and filter values when reopening a shared URL.</li>
+        </ul>
+      </article>
+
+      <article class="release-item" data-entry data-category="fix">
+        <div class="release-meta">
+          <strong>v1.2.1</strong>
+          <time datetime="2026-09-04" class="text-muted ms-2">2026-09-04</time>
+          <span class="badge-status ms-auto">Fix</span>
+        </div>
+        <h2>Keyboard details that matter</h2>
+        <ul>
+          <li>Kept the keyboard focus on search after clearing filters.</li>
+          <li>Added a visible label to each filter control.</li>
+        </ul>
+      </article>
+
+      <article class="release-item" data-entry data-category="feature">
+        <div class="release-meta">
+          <strong>v1.2.0</strong>
+          <time datetime="2026-08-27" class="text-muted ms-2">2026-08-27</time>
+          <span class="badge-status ms-auto">Feature</span>
+        </div>
+        <h2>Release history, in one place</h2>
+        <ul>
+          <li>Grouped changes under a version and date.</li>
+          <li>Kept the complete release list readable without JavaScript.</li>
+        </ul>
+      </article>
+
+      <article class="release-item" data-entry data-category="maintenance">
+        <div class="release-meta">
+          <strong>v1.1.0</strong>
+          <time datetime="2026-08-10" class="text-muted ms-2">2026-08-10</time>
+          <span class="badge-status ms-auto">Maintenance</span>
+        </div>
+        <h2>A smaller starting point</h2>
+        <ul>
+          <li>Documented the static HTML structure and shared filter logic.</li>
+          <li>Removed the need for an API key or package installation.</li>
+        </ul>
+      </article>
+
+      <footer class="demo-footer mt-5 pt-3 border-top" style="border-color: var(--border-glass) !important;">
+        <p>Fictional release history for demonstration. Filtering happens locally without external servers.</p>
+        <a class="button secondary button-sm me-2" href="../source/release-log.zip" download>Download source ZIP</a>
+        <a class="button secondary button-sm" href="../index.html#work">Back to portfolio</a>
+      </footer>
+    </main>
+  </div>
+</body>
+</html>

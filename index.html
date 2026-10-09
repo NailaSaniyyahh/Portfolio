@@ -1,0 +1,632 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ari Morgan | Informatics Engineering &amp; Software Developer</title>
+  <meta name="description" content="Portfolio of Ari Morgan, Fresh Graduate in Informatics Engineering. Software engineering, verified IT credentials, and modern web development.">
+  <meta name="theme-color" content="#e6f4ea">
+  <meta name="robots" content="noindex,follow">
+
+  <!-- Favicon -->
+  <link rel="icon" href="assets/mark.svg" type="image/svg+xml">
+
+  <!-- Bootstrap 5 CSS -->
+  <link rel="stylesheet" href="assets/vendor/bootstrap.min.css">
+
+  <!-- Minimalist Emerald Green Design System -->
+  <link rel="stylesheet" href="assets/style.css">
+
+  <!-- Calm Green Canvas Background -->
+  <script src="assets/canvas-bg.js" defer></script>
+
+  <!-- Core App Scripts -->
+  <script src="assets/app.js" defer></script>
+</head>
+<body>
+  <!-- Accessible Skip Link -->
+  <a class="skip" href="#main">Skip to main content</a>
+
+  <!-- Ambient Green Particle Canvas Background (Non-blocking) -->
+  <canvas id="bg-canvas" class="bg-canvas" aria-hidden="true"></canvas>
+
+  <div class="site-wrapper">
+
+    <!-- Simple Sleek Header -->
+    <header class="site-header">
+      <div class="container header-row">
+        <a class="brand" href="index.html" aria-label="Ari Morgan - Home">
+          <span class="brand-icon" aria-hidden="true">&lt;am/&gt;</span>
+          <span>Ari Morgan</span>
+          <span class="status-badge ms-2 d-none d-sm-inline-flex">
+            <span class="pulse-dot"></span> Available for Hire
+          </span>
+        </a>
+
+        <button type="button" class="menu-toggle" aria-controls="site-nav" aria-expanded="false" aria-label="Toggle navigation menu">
+          Menu
+        </button>
+
+        <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+          <a href="#work" class="active">Selected Work</a>
+          <a href="#credentials">Credentials</a>
+          <a href="#skills">Skills</a>
+          <a href="#about">About</a>
+          <a href="resume.html">Résumé</a>
+          <a class="nav-cta" href="#contact">Get in Touch ↗</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+
+      <!-- =================================================================
+           HERO SECTION: CLEAN & EYE-CATCHING
+           ================================================================= -->
+      <section class="hero" id="hero">
+        <div class="container">
+          <div class="row g-4 g-lg-5 align-items-center">
+
+            <!-- Hero Column Left: Bio & Highlights -->
+            <div class="col-lg-7">
+              <span class="eyebrow">
+                <span class="pulse-dot"></span> B.ENG IN INFORMATICS ENGINEERING · FRESH GRADUATE
+              </span>
+
+              <h1>
+                Engineering Scalable Systems.<br>
+                <span class="text-gradient">Crafting Intuitive Interfaces.</span><br>
+                Built with Rigor &amp; Intent.
+              </h1>
+
+              <p class="intro">
+                Driven, curious, and detail-oriented builder who loves turning complex engineering concepts into smooth, high-impact digital products. Rooted in strong algorithmic foundations and clean web craft.
+              </p>
+
+              <!-- Simple Clean Actions -->
+              <div class="actions">
+                <a class="button" href="#work">
+                  Explore Work ↓
+                </a>
+                <a class="button secondary" href="#credentials">
+                  View Credentials ↗
+                </a>
+                <a class="button secondary" href="resume.html">
+                  Read Résumé →
+                </a>
+              </div>
+            </div>
+
+            <!-- Hero Column Right: Clean Minimalist Terminal Card -->
+            <div class="col-lg-5">
+              <aside class="editor" aria-label="Developer summary">
+                <div class="editor-head">
+                  <div class="window-dots" aria-hidden="true">
+                    <span class="dot-red"></span>
+                    <span class="dot-yellow"></span>
+                    <span class="dot-green"></span>
+                  </div>
+                  <span class="file-tab mono">profile.json</span>
+                  <button type="button" class="editor-copy-btn" data-copy-target="#code-snippet" title="Copy profile JSON">
+                    Copy JSON
+                  </button>
+                </div>
+
+                <pre id="code-snippet"><span class="bracket">{</span>
+  <span class="key">"name"</span>: <span class="string">"Ari Morgan"</span>,
+  <span class="key">"role"</span>: <span class="string">"Informatics Engineering Graduate"</span>,
+  <span class="key">"degree"</span>: <span class="string">"B.Eng in Informatics (GPA 3.92)"</span>,
+  <span class="key">"foundations"</span>: <span class="bracket">[</span>
+    <span class="string">"data structures &amp; algorithms"</span>,
+    <span class="string">"clean web architecture"</span>,
+    <span class="string">"network protocols (TCP/IP)"</span>
+  <span class="bracket">]</span>,
+  <span class="key">"status"</span>: <span class="string">"open to full-time roles"</span>
+<span class="bracket">}</span></pre>
+
+                <div class="editor-foot">
+                  <span>Informatics Engineering</span>
+                  <span>UTF-8</span>
+                </div>
+              </aside>
+            </div>
+
+          </div>
+
+          <!-- Simple 4-Item Highlights Strip -->
+          <div class="hero-stats-row">
+            <div class="stat-item">
+              <span class="stat-value">3.92</span>
+              <span class="stat-label">Informatics GPA / Honors</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-value">4+</span>
+              <span class="stat-label">Verified IT Credentials</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-value">10+</span>
+              <span class="stat-label">Software Projects Built</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-value">100%</span>
+              <span class="stat-label">Code Rigor &amp; Testing</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =================================================================
+           CREDENTIALS & IT CERTIFICATIONS SECTION
+           ================================================================= -->
+      <section class="section" id="credentials">
+        <div class="container">
+          <div class="section-top">
+            <div>
+              <span class="eyebrow">ACCREDITATIONS &amp; HONORS</span>
+              <h2>Verified IT Certifications<br>&amp; Academic Awards.</h2>
+            </div>
+            <p>
+              Industry-standard credentials in cloud, networking, and software development alongside academic competition honors.
+            </p>
+          </div>
+
+          <div class="credentials-grid">
+
+            <!-- Card 1: AWS -->
+            <article class="credential-card">
+              <div class="credential-header">
+                <div class="credential-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path>
+                  </svg>
+                </div>
+                <div class="credential-title-group">
+                  <h3>AWS Certified Cloud Practitioner</h3>
+                  <span class="credential-issuer">Amazon Web Services (AWS)</span>
+                </div>
+              </div>
+              <p>
+                Core cloud infrastructure, IAM security policies, high availability, serverless compute, and cost governance.
+              </p>
+              <ul class="credential-tag-list">
+                <li class="credential-tag">Cloud Architecture</li>
+                <li class="credential-tag">AWS IAM &amp; S3</li>
+                <li class="credential-tag">Compute &amp; VPC</li>
+              </ul>
+              <div class="credential-meta">
+                <span class="mono">Issued: 2025 · ID: AWS-9482104</span>
+                <span class="badge-verified">✓ Verified</span>
+              </div>
+            </article>
+
+            <!-- Card 2: Meta Frontend -->
+            <article class="credential-card">
+              <div class="credential-header">
+                <div class="credential-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                    <polyline points="2 17 12 22 22 17"></polyline>
+                    <polyline points="2 12 12 17 22 12"></polyline>
+                  </svg>
+                </div>
+                <div class="credential-title-group">
+                  <h3>Meta Frontend Developer Professional</h3>
+                  <span class="credential-issuer">Meta / Coursera</span>
+                </div>
+              </div>
+              <p>
+                Component-driven architecture, state management patterns, responsive design, and web accessibility (WCAG 2.1 AA).
+              </p>
+              <ul class="credential-tag-list">
+                <li class="credential-tag">JavaScript ES6+</li>
+                <li class="credential-tag">Responsive UI</li>
+                <li class="credential-tag">WCAG 2.1 AA</li>
+              </ul>
+              <div class="credential-meta">
+                <span class="mono">Issued: 2025 · ID: META-FE-5519</span>
+                <span class="badge-verified">✓ Verified</span>
+              </div>
+            </article>
+
+            <!-- Card 3: Cisco CCNA -->
+            <article class="credential-card">
+              <div class="credential-header">
+                <div class="credential-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="2" width="6" height="6" rx="1"></rect>
+                    <rect x="16" y="2" width="6" height="6" rx="1"></rect>
+                    <rect x="9" y="16" width="6" height="6" rx="1"></rect>
+                    <path d="M5 8v3a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8"></path>
+                    <line x1="12" y1="13" x2="12" y2="16"></line>
+                  </svg>
+                </div>
+                <div class="credential-title-group">
+                  <h3>Cisco Certified Network Associate (CCNA)</h3>
+                  <span class="credential-issuer">Cisco Networking Academy</span>
+                </div>
+              </div>
+              <p>
+                Comprehensive knowledge of TCP/IP, packet routing, subnetting, network topologies, and network diagnostics.
+              </p>
+              <ul class="credential-tag-list">
+                <li class="credential-tag">TCP/IP Protocols</li>
+                <li class="credential-tag">Routing &amp; Switching</li>
+                <li class="credential-tag">Subnetting &amp; DNS</li>
+              </ul>
+              <div class="credential-meta">
+                <span class="mono">Issued: 2024 · ID: CSCO-148821</span>
+                <span class="badge-verified">✓ Verified</span>
+              </div>
+            </article>
+
+            <!-- Card 4: Oracle Java -->
+            <article class="credential-card">
+              <div class="credential-header">
+                <div class="credential-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="16 18 22 12 16 6"></polyline>
+                    <polyline points="8 6 2 12 8 18"></polyline>
+                  </svg>
+                </div>
+                <div class="credential-title-group">
+                  <h3>Oracle Certified Professional: Java &amp; Algorithms</h3>
+                  <span class="credential-issuer">Oracle University</span>
+                </div>
+              </div>
+              <p>
+                Object-oriented design, advanced data structures (trees, heaps, hash maps), thread concurrency, and Big-O analysis.
+              </p>
+              <ul class="credential-tag-list">
+                <li class="credential-tag">Data Structures</li>
+                <li class="credential-tag">Algorithms (Big-O)</li>
+                <li class="credential-tag">OOP Paradigms</li>
+              </ul>
+              <div class="credential-meta">
+                <span class="mono">Issued: 2024 · ID: OCP-772910</span>
+                <span class="badge-verified">✓ Verified</span>
+              </div>
+            </article>
+
+            <!-- Card 5: Hackathon -->
+            <article class="credential-card">
+              <div class="credential-header">
+                <div class="credential-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path>
+                    <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path>
+                    <path d="M4 22h16"></path>
+                    <path d="M10 14.66V17c0 .55-.45 1-1 1H7v4h10v-4h-2c-.55 0-1-.45-1-1v-2.34"></path>
+                    <path d="M6 4h12v7a6 6 0 0 1-12 0V4z"></path>
+                  </svg>
+                </div>
+                <div class="credential-title-group">
+                  <h3>1st Place — National InnoTech Hackathon</h3>
+                  <span class="credential-issuer">University Engineering Council</span>
+                </div>
+              </div>
+              <p>
+                1st Place out of 48 teams for building an emergency crisis coordination dashboard in a 36-hour sprint.
+              </p>
+              <ul class="credential-tag-list">
+                <li class="credential-tag">Rapid Architecture</li>
+                <li class="credential-tag">1st Place Award</li>
+              </ul>
+              <div class="credential-meta">
+                <span class="mono">Nov 2025</span>
+                <span class="badge-verified">★ Top Honors</span>
+              </div>
+            </article>
+
+            <!-- Card 6: Dean's Honor List -->
+            <article class="credential-card">
+              <div class="credential-header">
+                <div class="credential-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                    <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+                  </svg>
+                </div>
+                <div class="credential-title-group">
+                  <h3>Dean's List of Academic Excellence</h3>
+                  <span class="credential-issuer">Faculty of Informatics Engineering</span>
+                </div>
+              </div>
+              <p>
+                Honored across 6 consecutive semesters for sustained academic excellence in computer science and mathematics.
+              </p>
+              <ul class="credential-tag-list">
+                <li class="credential-tag">GPA 3.92 / 4.00</li>
+                <li class="credential-tag">Top 2% Cohort</li>
+              </ul>
+              <div class="credential-meta">
+                <span class="mono">2021 – 2025</span>
+                <span class="badge-verified">✓ Summa Cum Laude</span>
+              </div>
+            </article>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- =================================================================
+           FEATURED PROJECTS SECTION
+           ================================================================= -->
+      <section class="section" id="work">
+        <div class="container">
+          <div class="section-top">
+            <div>
+              <span class="eyebrow">SELECTED WORK</span>
+              <h2>Practical Engineering.<br>Clear Solutions.</h2>
+            </div>
+            <p>
+              Focused frontend projects built with clean Vanilla JS, semantic markup, and predictable state management.
+            </p>
+          </div>
+
+          <!-- Project 1: Issue Lens -->
+          <article class="project-card">
+            <div class="row g-0">
+              <div class="col-md-6 project-visual">
+                <a href="issue-lens.html" aria-label="Read Issue Lens case study">
+                  <img src="assets/issue-lens-preview.jpg" alt="Issue Lens searchable issue tracker demo" width="1200" height="833" loading="lazy">
+                </a>
+              </div>
+              <div class="col-md-6 project-copy">
+                <span class="eyebrow">01 / INTERNAL TOOL INTERFACE</span>
+                <h3>Issue Lens</h3>
+                <p>
+                  A fast issue-list view built to make backlog triage intuitive. Features live search, status filters, bi-directional URL query sync, and a clean fallback without bloated client dependencies.
+                </p>
+                <ul class="tag-list">
+                  <li class="tag">Vanilla JavaScript</li>
+                  <li class="tag">URL State</li>
+                  <li class="tag">Progressive Enhancement</li>
+                  <li class="tag">Bootstrap 5</li>
+                </ul>
+                <div class="actions">
+                  <a class="button" href="issue-lens.html">Read Case Study ↗</a>
+                  <a class="button secondary" href="demos/issue-lens.html">Try Demo</a>
+                  <a class="button secondary" href="source/issue-lens.zip" download>Download ZIP ↓</a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 2: Release Log -->
+          <article class="project-card">
+            <div class="row g-0">
+              <div class="col-md-6 project-visual">
+                <a href="release-log.html" aria-label="Read Release Log case study">
+                  <img src="assets/release-log-preview.jpg" alt="Release Log searchable changelog demo" width="1200" height="833" loading="lazy">
+                </a>
+              </div>
+              <div class="col-md-6 project-copy">
+                <span class="eyebrow">02 / PRODUCT COMMUNICATION</span>
+                <h3>Release Log</h3>
+                <p>
+                  A developer-first changelog platform engineered for discovery. Features fast text indexing, category filtering, shareable deep links, and semantic HTML that remains readable even without JavaScript.
+                </p>
+                <ul class="tag-list">
+                  <li class="tag">Semantic HTML5</li>
+                  <li class="tag">Search Indexing</li>
+                  <li class="tag">Filter Controller</li>
+                  <li class="tag">Responsive UI</li>
+                </ul>
+                <div class="actions">
+                  <a class="button" href="release-log.html">Read Case Study ↗</a>
+                  <a class="button secondary" href="demos/release-log.html">Try Demo</a>
+                  <a class="button secondary" href="source/release-log.zip" download>Download ZIP ↓</a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- =================================================================
+           TECHNICAL SKILLS SECTION
+           ================================================================= -->
+      <section class="section" id="skills">
+        <div class="container">
+          <div class="section-top">
+            <div>
+              <span class="eyebrow">TECHNICAL DOMAINS</span>
+              <h2>Foundational Skills Across<br>the Engineering Stack.</h2>
+            </div>
+            <p>
+              Grounded in computer science logic, data structures, and computer networks; applied directly to responsive web engineering.
+            </p>
+          </div>
+
+          <div class="skills-grid">
+
+            <!-- Domain 1: CS & Algorithms -->
+            <article class="skill-card">
+              <div class="skill-card-head">
+                <div class="skill-card-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="4 17 10 11 4 5"></polyline>
+                    <line x1="12" y1="19" x2="20" y2="19"></line>
+                  </svg>
+                </div>
+                <div>
+                  <span class="eyebrow mb-1">01 / FOUNDATIONS</span>
+                  <h3>Software &amp; Algorithms</h3>
+                </div>
+              </div>
+              <ul class="skill-items">
+                <li>Data Structures: Trees, Graphs, Hash Maps, Priority Queues</li>
+                <li>Algorithm Optimization &amp; Time/Space Complexity (Big-O)</li>
+                <li>Object-Oriented Programming (OOP) &amp; SOLID Design</li>
+                <li>Discrete Mathematics &amp; Relational Data Modeling</li>
+              </ul>
+            </article>
+
+            <!-- Domain 2: Modern Web -->
+            <article class="skill-card">
+              <div class="skill-card-head">
+                <div class="skill-card-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                    <line x1="8" y1="21" x2="16" y2="21"></line>
+                    <line x1="12" y1="17" x2="12" y2="21"></line>
+                  </svg>
+                </div>
+                <div>
+                  <span class="eyebrow mb-1">02 / CRAFT</span>
+                  <h3>Modern Web &amp; Frontend</h3>
+                </div>
+              </div>
+              <ul class="skill-items">
+                <li>Semantic HTML5, ARIA Standards &amp; WCAG 2.1 AA Accessibility</li>
+                <li>Modern CSS3: Custom Properties, Flexbox, CSS Grid</li>
+                <li>Vanilla ES6+ JavaScript: Async/Await, Canvas API, DOM Manipulation</li>
+                <li>Bootstrap 5 Customization &amp; Token Architecture</li>
+              </ul>
+            </article>
+
+            <!-- Domain 3: Systems & Networks -->
+            <article class="skill-card">
+              <div class="skill-card-head">
+                <div class="skill-card-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                    <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                    <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+                    <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+                  </svg>
+                </div>
+                <div>
+                  <span class="eyebrow mb-1">03 / NETWORKS</span>
+                  <h3>Systems &amp; Networking</h3>
+                </div>
+              </div>
+              <ul class="skill-items">
+                <li>Computer Networks: TCP/IP, HTTP/2, HTTP/3, WebSockets, DNS</li>
+                <li>Cloud Basics: AWS (S3, CloudFront, EC2, IAM Security)</li>
+                <li>Linux / Unix Environment &amp; Bash Shell Scripting</li>
+                <li>Git Version Control &amp; GitHub Collaborative Workflows</li>
+              </ul>
+            </article>
+
+            <!-- Domain 4: Quality & Tooling -->
+            <article class="skill-card">
+              <div class="skill-card-head">
+                <div class="skill-card-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                  </svg>
+                </div>
+                <div>
+                  <span class="eyebrow mb-1">04 / RIGOR</span>
+                  <h3>Quality &amp; Performance</h3>
+                </div>
+              </div>
+              <ul class="skill-items">
+                <li>Web Performance Profiling &amp; Core Web Vitals Auditing</li>
+                <li>Browser DevTools Memory Profiling &amp; DOM Optimization</li>
+                <li>Progressive Enhancement &amp; Defensive UX Error Handling</li>
+                <li>Clear Technical Documentation &amp; Architecture Notes</li>
+              </ul>
+            </article>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- =================================================================
+           ABOUT SECTION
+           ================================================================= -->
+      <section class="section about-section" id="about">
+        <div class="container">
+          <div class="row g-4 g-lg-5">
+            <div class="col-lg-5">
+              <span class="eyebrow">HOW I APPROACH WORK</span>
+              <h2>Understand the problem.<br>Build it cleanly.<br>Make it intuitive.</h2>
+              <p class="mt-4">
+                <a class="button secondary" href="resume.html">View Detailed Résumé →</a>
+              </p>
+            </div>
+
+            <div class="col-lg-7">
+              <p>
+                I am Ari Morgan, a fresh graduate in <strong>Informatics Engineering</strong> with a detail-oriented builder mindset. Having studied algorithmic logic, memory footprints, and network protocols, I approach frontend applications as structured software engineering challenges.
+              </p>
+              <p>
+                This foundation shapes every decision I make: avoiding unnecessary re-renders, designing for latency, keeping state predictable, and writing accessible, semantic HTML that remains rock-solid in real-world conditions.
+              </p>
+
+              <!-- Principles -->
+              <div class="principles">
+                <article>
+                  <h3><span class="principle-num">01</span> Make the next step obvious</h3>
+                  <p>A readable label, an intuitive empty state, and predictable focus often matter more than unnecessary visual clutter.</p>
+                </article>
+
+                <article>
+                  <h3><span class="principle-num">02</span> Build for more than the happy path</h3>
+                  <p>Test zero results, slow 3G network conditions, narrow viewports, and keyboard-only interaction before calling a feature done.</p>
+                </article>
+
+                <article>
+                  <h3><span class="principle-num">03</span> Leave a clear architectural trail</h3>
+                  <p>Document technical decisions, trade-offs, and setup steps so that collaborating teammates can reason about the codebase easily.</p>
+                </article>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =================================================================
+           CONTACT PANEL
+           ================================================================= -->
+      <section class="container" id="contact">
+        <div class="contact-panel">
+          <span class="eyebrow">HAVE A ROLE IN MIND?</span>
+          <h2>Let’s build something<br><span class="text-gradient">worth using together.</span></h2>
+          <p>
+            Currently seeking full-time opportunities as a Software Engineer or Frontend Developer. Ready to bring high energy, algorithmic discipline, and frontend craftsmanship to your team.
+          </p>
+
+          <div class="actions mt-4">
+            <a class="button" href="mailto:ari@example.com">
+              Email: ari@example.com ↗
+            </a>
+            <button type="button" class="button secondary" data-copy-email="ari@example.com">
+              Copy Email Address
+            </button>
+            <a class="button secondary" href="ari-morgan-resume.txt" download>
+              Download Résumé (.txt) ↓
+            </a>
+          </div>
+
+          <p class="sample-note mt-3" style="font-size: 0.74rem; color: var(--text-dim);">
+            Demo contact address. Replace with your own email before publishing.
+          </p>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Simple Footer -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-row">
+          <div>
+            <strong>Trace Developer</strong> · Built by Ari Morgan
+            <span class="d-block d-md-inline ms-md-3 text-dim">B.Eng in Informatics Engineering</span>
+          </div>
+          <div>
+            <a href="setup.html">Setup Guide</a> ·
+            <a href="resume.html">Full Résumé</a> ·
+            Template by <a href="https://colorlib.com/" target="_blank" rel="noopener">Colorlib</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+</body>
+</html>
+</html>

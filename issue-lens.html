@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Issue Lens | Technical Case Study — Trace Developer</title>
+  <meta name="description" content="Issue Lens case study: A zero-latency issue table with status filters, URL state management, and accessible keyboard interaction.">
+  <meta name="robots" content="noindex,follow">
+  <link rel="icon" href="assets/mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/vendor/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/style.css">
+  <script src="assets/canvas-bg.js" defer></script>
+  <script src="assets/app.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <canvas id="bg-canvas" class="bg-canvas" aria-hidden="true"></canvas>
+
+  <div class="site-wrapper">
+    <header class="site-header">
+      <div class="container header-row">
+        <a class="brand" href="index.html">
+          <span class="brand-icon" aria-hidden="true">&lt;am/&gt;</span>
+          <span>Ari Morgan</span>
+        </a>
+        <button type="button" class="menu-toggle" aria-controls="site-nav" aria-expanded="false">Menu</button>
+        <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+          <a href="index.html#work">Selected work</a>
+          <a href="index.html#credentials">Credentials &amp; Awards</a>
+          <a href="index.html#skills">Engineering Skills</a>
+          <a href="index.html#about">About</a>
+          <a href="resume.html">Résumé</a>
+          <a class="nav-cta" href="index.html#contact">Get in touch ↗</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <div class="container">
+        <header class="case-header">
+          <a class="back" href="index.html#work">← Back to selected work</a>
+          <span class="eyebrow">INTERNAL TOOL INTERFACE / CASE STUDY</span>
+          <h1>Less searching.<br><span class="text-gradient">More signal.</span></h1>
+          <p class="lead">Issue Lens is a focused frontend experiment in making backlogs understandable: a searchable issue table with status filters and a shareable URL view.</p>
+          <div class="actions">
+            <a class="button" href="demos/issue-lens.html">Try the working demo ↗</a>
+            <a class="button secondary" href="source/issue-lens.zip" download>Download source ZIP ↓</a>
+          </div>
+          <dl class="facts">
+            <div><dt>Role</dt><dd>Frontend Engineering</dd></div>
+            <div><dt>Stack</dt><dd>HTML, CSS, Vanilla JS</dd></div>
+            <div><dt>Architecture</dt><dd>URL State Machine</dd></div>
+            <div><dt>Status</dt><dd>Working UI Demo</dd></div>
+          </dl>
+        </header>
+
+        <figure class="case-image">
+          <img src="assets/issue-lens-preview.jpg" width="1200" height="833" alt="Screenshot of the working Issue Lens demo">
+        </figure>
+
+        <div class="case-body">
+          <section id="section-1">
+            <h2>01. The problem and scope</h2>
+            <p>A list becomes harder to use when the controls and the displayed state disagree. This project explores a focused issue view with eight local sample records. It does not connect to GitHub, accept new issues or manage permissions.</p>
+          </section>
+
+          <section id="section-2">
+            <h2>02. My contribution</h2>
+            <p>The example covers the complete frontend: semantic table markup, the filtering logic, query-string state and the empty-results message. The scope is deliberately small enough for someone to inspect the source and understand it in one sitting.</p>
+          </section>
+
+          <section id="implementation">
+            <h2>03. The implementation</h2>
+            <p>The initial issue list lives in HTML, so the content is available without JavaScript. The script reveals the controls, reads the query and category from the URL, and derives visibility from those two values. A result count announces changes without moving focus.</p>
+          </section>
+
+          <pre class="architecture"><code>HTML issue rows
+        ↓
+URL query + selected status
+        ↓
+Combined predicate
+        ↓
+Visible rows + count + empty state</code></pre>
+
+          <section id="section-4">
+            <h2>04. The decision that mattered</h2>
+            <p>I kept the table as the source of displayed content rather than maintaining a second copy of the records in JavaScript. That avoids synchronizing two datasets in this small static example. For a larger application, I would move data access behind a tested API boundary and define loading and failure states.</p>
+          </section>
+
+          <aside class="decision">
+            <strong>Decision note</strong>
+            One derived view, not two competing copies of state.
+          </aside>
+
+          <section id="section-5">
+            <h2>05. What the demo demonstrates</h2>
+            <p>Search and status filters combine seamlessly. The Clear filters button restores the list and returns focus to search. The URL keeps the current query and status so reloading retains the view. Unknown category values fall back to All statuses gracefully.</p>
+          </section>
+
+          <section id="section-6">
+            <h2>06. Checks and next steps</h2>
+            <p>Check a matching query, no results, combined filters, a URL reload and keyboard interaction. On a small screen the table can scroll within a named region. Before connecting live data, add authentication, authorization, server-side filtering and explicit API error handling.</p>
+          </section>
+
+          <div class="next-project">
+            <div>
+              <span class="eyebrow">NEXT PROJECT</span>
+              <h3>Release Log</h3>
+            </div>
+            <a class="button secondary" href="release-log.html">Read the case study →</a>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-row">
+          <span>Trace Developer · Thoughtfully built.</span>
+          <span><a href="setup.html">Setup &amp; publishing guide</a> · Template by <a href="https://colorlib.com/" target="_blank" rel="noopener">Colorlib</a></span>
+        </div>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

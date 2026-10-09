@@ -1,0 +1,49 @@
+========================================================================
+ARI MORGAN — SOFTWARE & FRONTEND ENGINEER
+Fresh Graduate in Informatics Engineering (B.Eng)
+Email: ari@example.com · Location: Open to Relocation & Remote Roles
+Portfolio: https://trace-developer.local (Demo)
+========================================================================
+
+PROFILE & OBJECTIVE
+Driven, curious, and detail-oriented builder who loves turning complex
+engineering concepts into smooth, high-impact digital products. Combines
+a rigorous foundation in algorithms, systems, and computer networks with
+modern frontend craft.
+
+EDUCATION
+Bachelor of Engineering in Informatics Engineering (B.Eng)
+Faculty of Computer Science & Engineering | 2021 – 2025
+- GPA: 3.92 / 4.00 (Summa Cum Laude)
+- Honors: Dean’s List of Academic Excellence (6 consecutive semesters)
+- Core: Algorithms & Data Structures, Distributed Systems, Computer Networks
+        (TCP/IP), Operating Systems, OOP, Web Architecture.
+
+VERIFIED IT CERTIFICATIONS
+- AWS Certified Cloud Practitioner — Amazon Web Services (2025)
+  Credential ID: AWS-9482104 | Cloud Architecture, IAM, Serverless
+- Meta Frontend Developer Professional Certificate — Meta / Coursera (2025)
+  Credential ID: META-FE-5519 | React, State Management, Accessibility (WCAG)
+- Cisco Certified Network Associate (CCNA) — Cisco Networking Academy (2024)
+  Credential ID: CSCO-148821 | TCP/IP, Routing & Switching, Subnetting, DNS
+- Oracle Certified Professional: Java & Algorithms — Oracle (2024)
+  Credential ID: OCP-772910 | Data Structures, Complexity Analysis, OOP
+
+AWARDS & ACHIEVEMENTS
+- 1st Place Winner — National InnoTech Hackathon (2025)
+  Best Software Architecture & UI Award among 48 engineering teams.
+- Informatics Dean's Honor Roll (2021 – 2025)
+  Graduated within top 2% of the Informatics Engineering cohort.
+
+TECHNICAL SKILLS
+- Languages: JavaScript (ES6+), TypeScript, HTML5, CSS3, Java, Python, SQL
+- Web & UI: Bootstrap 5, Canvas API, Responsive Design, WCAG 2.1 AA, State Sync
+- Systems & Cloud: TCP/IP, HTTP/3, WebSockets, Linux CLI, Git/GitHub, AWS Basics
+- Quality & Tooling: Performance Profiling, DevTools, Unit Testing, Documentation
+
+FEATURED PROJECTS
+- Issue Lens: Zero-latency issue tracking interface with URL state sync,
+  debounced filtering, and progressive enhancement fallback.
+- Release Log: Developer changelog platform with semantic HTML article
+  structures, search indexing, and deep-link filtering.
+========================================================================

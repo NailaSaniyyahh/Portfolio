@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Issue Lens Demo — Trace Developer</title>
+  <meta name="description" content="Search and filter a local sample issue list.">
+  <meta name="robots" content="noindex,follow">
+  <link rel="icon" href="../assets/mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/vendor/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/style.css">
+  <script src="../assets/canvas-bg.js" defer></script>
+  <script src="../assets/demo.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <canvas id="bg-canvas" class="bg-canvas" aria-hidden="true"></canvas>
+
+  <div class="site-wrapper">
+    <main id="main" class="demo-page py-4">
+      <header class="demo-top">
+        <div>
+          <span class="eyebrow">TRACE / WORKING DEMO</span>
+          <h1>Issue Lens</h1>
+          <p>A focused view of what needs attention.</p>
+        </div>
+        <a class="button secondary" href="../issue-lens.html">Read the case study ↗</a>
+      </header>
+
+      <form class="demo-toolbar" data-filter-form data-label="issues" hidden>
+        <div class="field search">
+          <label for="search">Search issues</label>
+          <input id="search" name="q" type="search" autocomplete="off" placeholder="Search titles and details…">
+        </div>
+        <div class="field">
+          <label for="category">Filter by status</label>
+          <select id="category" name="category">
+            <option value="all">All statuses</option>
+            <option value="open">Open</option>
+            <option value="in-progress">In progress</option>
+            <option value="done">Done</option>
+          </select>
+        </div>
+        <button class="button secondary" type="button" data-clear>Clear filters</button>
+      </form>
+
+      <p class="demo-status" role="status" aria-live="polite" data-result-count>All sample issues shown.</p>
+      <p class="empty-state" data-empty hidden>No matching issues. Try a different search or clear the filters.</p>
+
+      <div class="table-wrap" role="region" aria-label="Issues table, scroll horizontally on small screens" tabindex="0">
+        <table class="issue-table">
+          <thead>
+            <tr>
+              <th scope="col">Issue</th>
+              <th scope="col">Title</th>
+              <th scope="col">Status</th>
+              <th scope="col">Priority</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr data-entry data-category="in-progress">
+              <td>ISS-101</td>
+              <td><strong>Keyboard focus lost after closing search</strong></td>
+              <td><span class="badge-status">In progress</span></td>
+              <td>High</td>
+            </tr>
+            <tr data-entry data-category="open">
+              <td>ISS-102</td>
+              <td><strong>Add an empty state to the activity feed</strong></td>
+              <td><span class="badge-status">Open</span></td>
+              <td>Medium</td>
+            </tr>
+            <tr data-entry data-category="done">
+              <td>ISS-103</td>
+              <td><strong>Clarify the export button label</strong></td>
+              <td><span class="badge-status done">Done</span></td>
+              <td>Low</td>
+            </tr>
+            <tr data-entry data-category="done">
+              <td>ISS-104</td>
+              <td><strong>Filter changes should update the URL</strong></td>
+              <td><span class="badge-status done">Done</span></td>
+              <td>High</td>
+            </tr>
+            <tr data-entry data-category="open">
+              <td>ISS-105</td>
+              <td><strong>Preserve the query when opening an issue</strong></td>
+              <td><span class="badge-status">Open</span></td>
+              <td>Medium</td>
+            </tr>
+            <tr data-entry data-category="in-progress">
+              <td>ISS-106</td>
+              <td><strong>Check the menu at narrow widths</strong></td>
+              <td><span class="badge-status">In progress</span></td>
+              <td>Medium</td>
+            </tr>
+            <tr data-entry data-category="done">
+              <td>ISS-107</td>
+              <td><strong>Give the search field a visible label</strong></td>
+              <td><span class="badge-status done">Done</span></td>
+              <td>High</td>
+            </tr>
+            <tr data-entry data-category="open">
+              <td>ISS-108</td>
+              <td><strong>Document fixture data in the README</strong></td>
+              <td><span class="badge-status">Open</span></td>
+              <td>Low</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="table-hint">Scroll sideways to see status and priority →</p>
+
+      <footer class="demo-footer mt-5 pt-3 border-top" style="border-color: var(--border-glass) !important;">
+        <p>Eight local sample issues. Search and filters work in your browser without external servers.</p>
+        <a class="button secondary button-sm me-2" href="../source/issue-lens.zip" download>Download source ZIP</a>
+        <a class="button secondary button-sm" href="../index.html#work">Back to portfolio</a>
+      </footer>
+    </main>
+  </div>
+</body>
+</html>

@@ -1,0 +1,12 @@
+Trace Developer — Copyright 2026 Colorlib.
+Original layout, copy, JavaScript and demo applications: Creative Commons
+Attribution 3.0 Unported (CC BY 3.0).
+https://creativecommons.org/licenses/by/3.0/legalcode
+Credit Colorlib (https://colorlib.com/), link to the license and indicate changes.
+The supplied footer provides the Colorlib credit.
+Third-party assets retain their own licenses:
+Bootstrap 5.3.8 CSS: MIT — assets/vendor/BOOTSTRAP-LICENSE.txt
+Inter font: SIL Open Font License — assets/fonts/INTER-LICENSE.txt
+Dependencies reused from Colorlib's verified Jackson/Fieldnotes releases.
+Ari Morgan and the career history are fictional. Demo issues and releases are
+sample records. No third-party client endorsement or measured impact is claimed.
