@@ -471,23 +471,51 @@ select:focus-visible {
 /* ==========================================================================
    HERO PROFILE PHOTO CARD
    ========================================================================== */
+/* Hero Column Alignments */
+.hero-col-left {
+  text-align: left;
+}
+
 .hero-photo-container {
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
   position: relative;
+  width: 100%;
 }
 
 .hero-photo-card {
   position: relative;
   width: 100%;
   max-width: 360px;
+  margin-left: auto;
+  margin-right: 0;
   border-radius: 22px;
   overflow: hidden;
   background: var(--bg-card);
   border: 1px solid var(--border-card);
   box-shadow: 0 16px 36px -8px rgba(12, 43, 26, 0.12);
   transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+@media (min-width: 992px) {
+  .hero-col-left {
+    padding-left: 0;
+  }
+  .hero-col-right {
+    padding-right: 0;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .hero-photo-container {
+    justify-content: center;
+    margin-top: 20px;
+  }
+  .hero-photo-card {
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 .hero-photo-card:hover {
