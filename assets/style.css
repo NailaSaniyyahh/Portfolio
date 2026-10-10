@@ -262,6 +262,19 @@ select:focus-visible {
   font-weight: 700;
   font-size: 0.85rem;
   color: var(--green-mint);
+  flex-shrink: 0;
+}
+
+.brand-icon svg {
+  width: 16px;
+  height: 16px;
+  stroke: var(--green-mint);
+}
+
+.brand-icon i {
+  font-size: 0.92rem;
+  color: var(--green-mint);
+  line-height: 1;
 }
 
 .site-nav {
