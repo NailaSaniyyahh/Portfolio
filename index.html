@@ -18,7 +18,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <!-- Minimalist Emerald Green Design System -->
-  <link rel="stylesheet" href="assets/style.css?v=5">
+  <link rel="stylesheet" href="assets/style.css?v=6">
 
   <!-- Calm Green Canvas Background -->
   <script src="assets/canvas-bg.js" defer></script>
@@ -63,8 +63,6 @@
       <section class="hero" id="hero">
         <div class="container">
           <div class="row g-4 g-lg-5 align-items-center justify-content-between">
-
-            <!-- Hero Column Left: Bio & Highlights -->
             <div class="col-lg-7 hero-col-left">
               <h1>
                 HELLO!<br>
@@ -72,8 +70,6 @@
                 Fresh Graduate in Informatics Engineering
               </h1>
             </div>
-
-            <!-- Hero Column Right: Profile Photo -->
             <div class="col-lg-5 hero-col-right">
               <div class="hero-photo-container">
                 <div class="hero-photo-card" style="width: 390px; max-width: 100%; height: 535px; margin-left: auto; border-radius: 20px; overflow: hidden; border: 3px solid rgba(16, 185, 129, 0.42); box-shadow: 0 16px 36px -8px rgba(12, 43, 26, 0.16); position: relative;">
@@ -88,21 +84,18 @@
 
       <section class="section" id="about">
         <div class="container">
-          <div class="section-top d-block mb-3">
+          <div class="section-top d-block">
             <h2>About Me</h2>
           </div>
 
           <div class="row g-4 align-items-center">
-            <!-- Kolom Kiri: Teks Bio Fresh Graduate -->
             <div class="col-lg-7">
-              <div class="isi-aboutme m-0">
+              <div class="isi-aboutme">
                 <p>
                   I am a fresh graduate in Informatics Engineering from Politeknik Negeri Bandung. I have a strong interest in backend Engineering, Software Engineer, Full-stack, and search systems. I have worked with OpenSearch, Spring Boot, and React through my internship and projects, and I like to test my work with real data. I enjoy working in a team and use AI tools to learn faster. I am eager to learn new things and keep improving myself.
                 </p>
               </div>
             </div>
-
-            <!-- Kolom Kanan: Card Politeknik Negeri Bandung -->
             <div class="col-lg-5">
               <article class="collage-card m-0">
                 <div class="collage-header">
@@ -126,6 +119,50 @@
               </article>
             </div>
           </div>
+        </div>
+      </section>
+      
+      <section class="section" id="work">
+        <div class="container">
+          <div class="section-top">
+            <div>
+              <h2>Work Experience</h2>
+            </div>
+          </div>
+          <article class="project-card">
+            <div class="row g-0">
+              <div class="col-md-6 project-visual">
+                <a href="issue-lens.html" aria-label="Read Issue Lens case study">
+                  <img src="assets/issue-lens-preview.jpg" alt="Issue Lens searchable issue tracker demo" width="1200" height="833" loading="lazy">
+                </a>
+              </div>
+              <div class="col-md-6 project-copy">
+                <span class="eyebrow">01 / INTERNSHIP</span>
+                <div class="project-header-row">
+                  <h3>Web Developer</h3>
+                  <span class="project-date">
+                    <i class="fa-regular fa-calendar"></i> Jul 2025 – Oct 2025
+                  </span>
+                </div>
+
+                <h5>PT PERIPLUS BOOKINDO - East Jakarta</h5>
+                <p>
+                  During my internship, I worked on the search suggestion feature of the Periplus website. My goal was to help users find books faster, even when they type only part of a word or make small typos.
+                </p>
+                <p>
+                  I designed the OpenSearch index and tried four query strategies: completion, search-as-you-type, phrase, and fuzzy. I also cleaned the search keywords and used click counts to rank results, so results that people click more often get a higher rank. To check my work, I built a small prototype with Python, Flask, and a simple web page.
+                </p>
+                <ul class="tag-list">
+                  <li class="tag">Python</li>
+                  <li class="tag">Flask</li>
+                  <li class="tag">OpenSearch</li>
+                  <li class="tag">HTML</li>
+                  <li class="tag">CSS</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
         </div>
       </section>
 
@@ -322,81 +359,7 @@
         </div>
       </section>
 
-      <!-- =================================================================
-           FEATURED PROJECTS SECTION
-           ================================================================= -->
-      <section class="section" id="work">
-        <div class="container">
-          <div class="section-top">
-            <div>
-              <span class="eyebrow">SELECTED WORK</span>
-              <h2>Practical Engineering.<br>Clear Solutions.</h2>
-            </div>
-            <p>
-              Focused frontend projects built with clean Vanilla JS, semantic markup, and predictable state management.
-            </p>
-          </div>
-
-          <!-- Project 1: Issue Lens -->
-          <article class="project-card">
-            <div class="row g-0">
-              <div class="col-md-6 project-visual">
-                <a href="issue-lens.html" aria-label="Read Issue Lens case study">
-                  <img src="assets/issue-lens-preview.jpg" alt="Issue Lens searchable issue tracker demo" width="1200" height="833" loading="lazy">
-                </a>
-              </div>
-              <div class="col-md-6 project-copy">
-                <span class="eyebrow">01 / INTERNAL TOOL INTERFACE</span>
-                <h3>Issue Lens</h3>
-                <p>
-                  A fast issue-list view built to make backlog triage intuitive. Features live search, status filters, bi-directional URL query sync, and a clean fallback without bloated client dependencies.
-                </p>
-                <ul class="tag-list">
-                  <li class="tag">Vanilla JavaScript</li>
-                  <li class="tag">URL State</li>
-                  <li class="tag">Progressive Enhancement</li>
-                  <li class="tag">Bootstrap 5</li>
-                </ul>
-                <div class="actions">
-                  <a class="button" href="issue-lens.html">Read Case Study ↗</a>
-                  <a class="button secondary" href="demos/issue-lens.html">Try Demo</a>
-                  <a class="button secondary" href="source/issue-lens.zip" download>Download ZIP ↓</a>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <!-- Project 2: Release Log -->
-          <article class="project-card">
-            <div class="row g-0">
-              <div class="col-md-6 project-visual">
-                <a href="release-log.html" aria-label="Read Release Log case study">
-                  <img src="assets/release-log-preview.jpg" alt="Release Log searchable changelog demo" width="1200" height="833" loading="lazy">
-                </a>
-              </div>
-              <div class="col-md-6 project-copy">
-                <span class="eyebrow">02 / PRODUCT COMMUNICATION</span>
-                <h3>Release Log</h3>
-                <p>
-                  A developer-first changelog platform engineered for discovery. Features fast text indexing, category filtering, shareable deep links, and semantic HTML that remains readable even without JavaScript.
-                </p>
-                <ul class="tag-list">
-                  <li class="tag">Semantic HTML5</li>
-                  <li class="tag">Search Indexing</li>
-                  <li class="tag">Filter Controller</li>
-                  <li class="tag">Responsive UI</li>
-                </ul>
-                <div class="actions">
-                  <a class="button" href="release-log.html">Read Case Study ↗</a>
-                  <a class="button secondary" href="demos/release-log.html">Try Demo</a>
-                  <a class="button secondary" href="source/release-log.zip" download>Download ZIP ↓</a>
-                </div>
-              </div>
-            </div>
-          </article>
-
-        </div>
-      </section>
+      
 
       <!-- =================================================================
            TECHNICAL SKILLS SECTION
