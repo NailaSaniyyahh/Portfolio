@@ -18,7 +18,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <!-- Minimalist Emerald Green Design System -->
-  <link rel="stylesheet" href="assets/style.css?v=4">
+  <link rel="stylesheet" href="assets/style.css?v=5">
 
   <!-- Calm Green Canvas Background -->
   <script src="assets/canvas-bg.js" defer></script>
@@ -88,40 +88,44 @@
 
       <section class="section" id="about">
         <div class="container">
-          <div class="section-top d-block">
+          <div class="section-top d-block mb-3">
             <h2>About Me</h2>
-              <div class="collage-grid">
-                <article class="credential-card">
-                  <div class="credential-header">
-                    <div class="credential-icon" aria-hidden="true" style="background: #ffffff; padding: 4px;">
-                      <img src="assets/polbaLogo.JPG" alt="Logo Politeknik Negeri Bandung" class="credential-logo-img" style="width: 28px; height: 28px; object-fit: contain; display: block;">
-                    </div>
-                    <div class="credential-title-group">
-                      <h3>Politeknik Negeri Bandung</h3>
-                    </div>
-                  </div>
-                  <p>
-                    Core cloud infrastructure, IAM security policies, high availability, serverless compute, and cost governance.
-                  </p>
-                  <ul class="credential-tag-list">
-                    <li class="credential-tag">Cloud Architecture</li>
-                    <li class="credential-tag">AWS IAM &amp; S3</li>
-                    <li class="credential-tag">Compute &amp; VPC</li>
-                  </ul>
-                  <div class="credential-meta">
-                    <span class="mono">Issued: 2025 · ID: AWS-9482104</span>
-                    <span class="badge-verified">✓ Verified</span>
-                  </div>
-                </article>
-              </div>
-            <div class="isi-aboutme">
-              <p>
-                I am a fresh graduate in Informatics Engineering from Politeknik Negeri Bandung. I have a strong interest in backend Engineering, Software Engineer, Full-stack, and search systems. I have worked with OpenSearch, Spring Boot, and React through my internship and projects, and I like to test my work with real data. I enjoy working in a team and use AI tools to learn faster. I am eager to learn new things and keep improving myself.
-              </p>
-            </div>
           </div>
 
-          
+          <div class="row g-4 align-items-center">
+            <!-- Kolom Kiri: Teks Bio Fresh Graduate -->
+            <div class="col-lg-7">
+              <div class="isi-aboutme m-0">
+                <p>
+                  I am a fresh graduate in Informatics Engineering from Politeknik Negeri Bandung. I have a strong interest in backend Engineering, Software Engineer, Full-stack, and search systems. I have worked with OpenSearch, Spring Boot, and React through my internship and projects, and I like to test my work with real data. I enjoy working in a team and use AI tools to learn faster. I am eager to learn new things and keep improving myself.
+                </p>
+              </div>
+            </div>
+
+            <!-- Kolom Kanan: Card Politeknik Negeri Bandung -->
+            <div class="col-lg-5">
+              <article class="collage-card m-0">
+                <div class="collage-header">
+                  <div class="collage-icon" aria-hidden="true" style="background: #ffffff; padding: 4px;">
+                    <img src="assets/polbaLogo.JPG" alt="Logo Politeknik Negeri Bandung" class="collage-logo-img" style="width: 28px; height: 28px; object-fit: contain; display: block;">
+                  </div>
+                  <div class="collage-title-group">
+                    <h3>Politeknik Negeri Bandung</h3>
+                  </div>
+                </div>
+                <p class="collage-teks">
+                  Bachelor of Applied Science in Informatics Engineering 
+                </p>
+                <p class="collage-teks">
+                  Final Project: "Improving Search Suggestion Relevance in an Online Bookstore with Hybrid BM25-SBERT Re-ranking"
+                </p>
+                <ul class="collage-tag-list">
+                  <li class="collage-tag">GPA: 3.21 / 4.00</li>
+                  <li class="collage-tag">Graduated: 2026</li>
+                </ul>
+              </article>
+            </div>
+          </div>
         </div>
       </section>
 
