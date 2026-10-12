@@ -691,7 +691,7 @@ select:focus-visible {
    ========================================================================== */
 .credentials-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
   gap: 18px;
 }
 
@@ -714,7 +714,7 @@ select:focus-visible {
 
 .credential-header {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 14px;
   margin-bottom: 14px;
 }
@@ -729,7 +729,13 @@ select:focus-visible {
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  overflow: hidden;
   color: var(--green-deep);
+}
+
+.credential-icon:has(img) {
+  background: #ffffff;
+  padding: 4px;
 }
 
 .credential-icon svg {
@@ -737,9 +743,19 @@ select:focus-visible {
   height: 22px;
 }
 
+.credential-icon img,
+.credential-logo-img {
+  width: 100%;
+  height: 100%;
+  max-width: 28px;
+  max-height: 28px;
+  object-fit: contain;
+  display: block;
+}
+
 .credential-title-group h3 {
   font-size: 1.12rem;
-  margin: 0 0 3px;
+  margin: 0;
   justify-content: center;
 }
 
