@@ -963,6 +963,223 @@ select:focus-visible {
 }
 
 /* ==========================================================================
+   FEATURED PROJECTS SLIDER (SWIPEABLE 2-CARD CAROUSEL)
+   ========================================================================== */
+.projects-slider-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.projects-track {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding: 6px 2px 14px;
+  margin: 0;
+}
+
+.projects-track::-webkit-scrollbar {
+  display: none;
+}
+
+.project-item-card {
+  flex: 0 0 calc(50% - 10px);
+  min-width: 0;
+  scroll-snap-align: start;
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: 16px;
+  padding: 26px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-card);
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.project-item-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--border-hover);
+  box-shadow: var(--shadow-card-hover);
+}
+
+@media (max-width: 991.98px) {
+  .project-item-card {
+    flex: 0 0 100%;
+  }
+}
+
+.project-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.project-card-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: rgba(16, 185, 129, 0.12);
+  border: 1px solid var(--border-card);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--green-deep);
+}
+
+.project-item-card h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0 0 10px;
+  color: var(--text-main);
+}
+
+.project-item-card p {
+  font-size: 0.92rem;
+  line-height: 1.65;
+  color: var(--text-secondary);
+  margin-bottom: 16px;
+  flex-grow: 1;
+}
+
+.project-tags {
+  list-style: none;
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  padding: 0;
+  margin: 0 0 18px 0;
+}
+
+.project-tag {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--green-deep);
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.22);
+  padding: 3px 9px;
+  border-radius: 9999px;
+}
+
+.project-card-footer {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-top: auto;
+  padding-top: 14px;
+  border-top: 1px solid var(--border-card);
+}
+
+.project-card-link {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--green-deep);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  transition: color 0.2s ease;
+}
+
+.project-card-link:hover {
+  color: var(--green-primary);
+}
+
+/* Slider Controls (Bullets & Arrows) */
+.projects-slider-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  margin-top: 16px;
+}
+
+.slider-nav-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  color: var(--green-deep);
+  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  line-height: 1;
+  transition: all 0.2s ease;
+  box-shadow: var(--shadow-card);
+}
+
+.slider-nav-btn:hover {
+  background: var(--green-primary);
+  color: #ffffff;
+  border-color: var(--green-primary);
+}
+
+.projects-pagination {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pagination-bullet {
+  width: 10px;
+  height: 10px;
+  border-radius: 9999px;
+  background: rgba(16, 185, 129, 0.25);
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+.pagination-bullet.active {
+  width: 26px;
+  background: var(--green-primary);
+}
+
+.pagination-bullet:hover {
+  background: var(--green-primary);
+}
+
+/* GitHub CTA Button */
+.projects-github-cta {
+  margin-top: 24px;
+  display: flex;
+  justify-content: center;
+}
+
+.projects-github-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 10px 24px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  border-radius: 9999px;
+  background: var(--bg-card);
+  border: 1.5px solid var(--green-primary);
+  color: var(--green-deep);
+  text-decoration: none;
+  box-shadow: 0 4px 14px rgba(12, 43, 26, 0.08);
+  transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
+}
+
+.projects-github-btn:hover {
+  background: var(--green-primary);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(16, 185, 129, 0.28);
+}
+
+/* ==========================================================================
    SKILLS MATRIX
    ========================================================================== */
 .skills-grid {

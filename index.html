@@ -18,7 +18,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <!-- Minimalist Emerald Green Design System -->
-  <link rel="stylesheet" href="assets/style.css?v=7">
+  <link rel="stylesheet" href="assets/style.css?v=8">
 
   <!-- Calm Green Canvas Background -->
   <script src="assets/canvas-bg.js" defer></script>
@@ -171,107 +171,154 @@
         </div>
       </section>
 
-      <section class="section" id="skills">
+      <section class="section" id="projects">
         <div class="container">
           <div class="section-top">
             <div>
-              <h2>Featured Project</h2>
+              <span class="eyebrow">PORTFOLIO WORK</span>
+              <h2>Featured Projects.</h2>
             </div>
             <p>
-              Grounded in computer science logic, data structures, and computer networks; applied directly to responsive web engineering.
+              Handcrafted software, web systems, and algorithms built with performance and clean code rigor.
             </p>
           </div>
 
-          <div class="skills-grid">
+          <!-- Projects Slider Container -->
+          <div class="projects-slider-wrapper">
+            <div class="projects-track" id="projects-track">
 
-            <!-- Domain 1: CS & Algorithms -->
-            <article class="skill-card">
-              <div class="skill-card-head">
-                <div class="skill-card-icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
-                    <polyline points="4 17 10 11 4 5"></polyline>
-                    <line x1="12" y1="19" x2="20" y2="19"></line>
-                  </svg>
+              <!-- Card 1: Hybrid BM25-SBERT Search System -->
+              <article class="project-item-card">
+                <div class="project-card-header">
+                  <div class="project-card-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <circle cx="11" cy="11" r="8"></circle>
+                      <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                  </div>
+                  <span class="eyebrow">01 / SEARCH SYSTEM</span>
                 </div>
-                <div>
-                  <span class="eyebrow mb-1">01 / FOUNDATIONS</span>
-                  <h3>Software &amp; Algorithms</h3>
+                <h3>Hybrid BM25-SBERT Suggestion</h3>
+                <p>
+                  Search suggestion engine for bookstore catalogs that balances exact lexical keyword match with deep semantic similarity, drastically reducing zero-hit queries and typo failures.
+                </p>
+                <ul class="project-tags">
+                  <li class="project-tag">OpenSearch</li>
+                  <li class="project-tag">Python</li>
+                  <li class="project-tag">SBERT</li>
+                  <li class="project-tag">Flask</li>
+                  <li class="project-tag">BM25</li>
+                </ul>
+                <div class="project-card-footer">
+                  <span class="badge-verified">✓ Production Proven</span>
+                  <a class="project-card-link ms-auto" href="demos/release-log.html">View Demo ↗</a>
                 </div>
-              </div>
-              <ul class="skill-items">
-                <li>Data Structures: Trees, Graphs, Hash Maps, Priority Queues</li>
-                <li>Algorithm Optimization &amp; Time/Space Complexity (Big-O)</li>
-                <li>Object-Oriented Programming (OOP) &amp; SOLID Design</li>
-                <li>Discrete Mathematics &amp; Relational Data Modeling</li>
-              </ul>
-            </article>
+              </article>
 
-            <!-- Domain 2: Modern Web -->
-            <article class="skill-card">
-              <div class="skill-card-head">
-                <div class="skill-card-icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
-                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
-                    <line x1="8" y1="21" x2="16" y2="21"></line>
-                    <line x1="12" y1="17" x2="12" y2="21"></line>
-                  </svg>
+              <!-- Card 2: Issue Lens -->
+              <article class="project-item-card">
+                <div class="project-card-header">
+                  <div class="project-card-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <line x1="12" y1="8" x2="12" y2="12"></line>
+                      <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                    </svg>
+                  </div>
+                  <span class="eyebrow">02 / WEB APPLICATION</span>
                 </div>
-                <div>
-                  <span class="eyebrow mb-1">02 / CRAFT</span>
-                  <h3>Modern Web &amp; Frontend</h3>
+                <h3>Issue Lens Triage Dashboard</h3>
+                <p>
+                  High-performance issue triage interface featuring instant search filtering, bi-directional URL query sync, keyboard accessibility, and zero bloated external runtime dependencies.
+                </p>
+                <ul class="project-tags">
+                  <li class="project-tag">Vanilla JavaScript</li>
+                  <li class="project-tag">URL State</li>
+                  <li class="project-tag">Bootstrap 5</li>
+                  <li class="project-tag">Accessibility</li>
+                </ul>
+                <div class="project-card-footer">
+                  <a class="project-card-link" href="issue-lens.html">Case Study ↗</a>
+                  <a class="project-card-link ms-auto" href="demos/issue-lens.html">Live Demo ↗</a>
                 </div>
-              </div>
-              <ul class="skill-items">
-                <li>Semantic HTML5, ARIA Standards &amp; WCAG 2.1 AA Accessibility</li>
-                <li>Modern CSS3: Custom Properties, Flexbox, CSS Grid</li>
-                <li>Vanilla ES6+ JavaScript: Async/Await, Canvas API, DOM Manipulation</li>
-                <li>Bootstrap 5 Customization &amp; Token Architecture</li>
-              </ul>
-            </article>
+              </article>
 
-            <!-- Domain 3: Systems & Networks -->
-            <article class="skill-card">
-              <div class="skill-card-head">
-                <div class="skill-card-icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
-                    <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
-                    <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
-                    <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
-                  </svg>
+              <!-- Card 3: Release Log Platform -->
+              <article class="project-item-card">
+                <div class="project-card-header">
+                  <div class="project-card-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                      <polyline points="14 2 14 8 20 8"></polyline>
+                      <line x1="16" y1="13" x2="8" y2="13"></line>
+                      <line x1="16" y1="17" x2="8" y2="17"></line>
+                    </svg>
+                  </div>
+                  <span class="eyebrow">03 / DEVELOPER TOOL</span>
                 </div>
-                <div>
-                  <span class="eyebrow mb-1">03 / NETWORKS</span>
-                  <h3>Systems &amp; Networking</h3>
+                <h3>Release Log Platform</h3>
+                <p>
+                  Clean changelog and release notes system designed for discovery. Features fast client-side indexing, category filtration, shareable anchors, and semantic HTML structure.
+                </p>
+                <ul class="project-tags">
+                  <li class="project-tag">Semantic HTML5</li>
+                  <li class="project-tag">Search Index</li>
+                  <li class="project-tag">CSS Grid</li>
+                  <li class="project-tag">Responsive</li>
+                </ul>
+                <div class="project-card-footer">
+                  <a class="project-card-link" href="release-log.html">Case Study ↗</a>
+                  <a class="project-card-link ms-auto" href="demos/release-log.html">Live Demo ↗</a>
                 </div>
-              </div>
-              <ul class="skill-items">
-                <li>Computer Networks: TCP/IP, HTTP/2, HTTP/3, WebSockets, DNS</li>
-                <li>Cloud Basics: AWS (S3, CloudFront, EC2, IAM Security)</li>
-                <li>Linux / Unix Environment &amp; Bash Shell Scripting</li>
-                <li>Git Version Control &amp; GitHub Collaborative Workflows</li>
-              </ul>
-            </article>
+              </article>
 
-            <!-- Domain 4: Quality & Tooling -->
-            <article class="skill-card">
-              <div class="skill-card-head">
-                <div class="skill-card-icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-                  </svg>
+              <!-- Card 4: Crisis Coordination Dashboard -->
+              <article class="project-item-card">
+                <div class="project-card-header">
+                  <div class="project-card-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                    </svg>
+                  </div>
+                  <span class="eyebrow">04 / HACKATHON WINNER</span>
                 </div>
-                <div>
-                  <span class="eyebrow mb-1">04 / RIGOR</span>
-                  <h3>Quality &amp; Performance</h3>
+                <h3>Crisis Coordination Dashboard</h3>
+                <p>
+                  Rapid crisis coordination dashboard built in a 36-hour sprint for emergency response teams. Awarded 1st Place out of 48 teams in the National InnoTech Hackathon.
+                </p>
+                <ul class="project-tags">
+                  <li class="project-tag">React</li>
+                  <li class="project-tag">Real-Time Data</li>
+                  <li class="project-tag">Leaflet Maps</li>
+                  <li class="project-tag">Fast Triage</li>
+                </ul>
+                <div class="project-card-footer">
+                  <span class="badge-verified">★ 1st Place Award</span>
+                  <a class="project-card-link ms-auto" href="https://github.com/nailaanai" target="_blank" rel="noopener noreferrer">Source Code ↗</a>
                 </div>
+              </article>
+
+            </div>
+
+            <!-- Slider Pagination Controls (Bullets + Navigation) -->
+            <div class="projects-slider-controls">
+              <button type="button" class="slider-nav-btn prev" id="projects-prev-btn" aria-label="Previous slide">‹</button>
+              
+              <div class="projects-pagination" id="projects-pagination" aria-label="Projects slider pagination">
+                <button type="button" class="pagination-bullet active" data-slide="0" aria-label="Go to slide 1"></button>
+                <button type="button" class="pagination-bullet" data-slide="1" aria-label="Go to slide 2"></button>
               </div>
-              <ul class="skill-items">
-                <li>Web Performance Profiling &amp; Core Web Vitals Auditing</li>
-                <li>Browser DevTools Memory Profiling &amp; DOM Optimization</li>
-                <li>Progressive Enhancement &amp; Defensive UX Error Handling</li>
-                <li>Clear Technical Documentation &amp; Architecture Notes</li>
-              </ul>
-            </article>
+
+              <button type="button" class="slider-nav-btn next" id="projects-next-btn" aria-label="Next slide">›</button>
+            </div>
+
+            <!-- GitHub CTA Button below bullets -->
+            <div class="projects-github-cta">
+              <a href="https://github.com/nailaanai" target="_blank" rel="noopener noreferrer" class="projects-github-btn">
+                <i class="fa-brands fa-github"></i>
+                <span>View More on GitHub ↗</span>
+              </a>
+            </div>
 
           </div>
         </div>

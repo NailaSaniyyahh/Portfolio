@@ -115,4 +115,75 @@
       });
     });
   }
+
+  // --- Projects Slider Interaction (Swipe & Bullets) ---
+  const projectsTrack = document.querySelector('#projects-track');
+  const projectBullets = document.querySelectorAll('#projects-pagination .pagination-bullet');
+  const prevBtn = document.querySelector('#projects-prev-btn');
+  const nextBtn = document.querySelector('#projects-next-btn');
+
+  if (projectsTrack) {
+    function scrollToSlide(slideIndex) {
+      const card = projectsTrack.querySelector('.project-item-card');
+      if (!card) return;
+      const cardWidth = card.offsetWidth;
+      const gap = 20;
+      const isDesktop = window.innerWidth >= 992;
+      const scrollStep = isDesktop ? (cardWidth * 2 + gap * 2) : (cardWidth + gap);
+      projectsTrack.scrollTo({
+        left: slideIndex * scrollStep,
+        behavior: 'smooth'
+      });
+    }
+
+    projectBullets.forEach((bullet) => {
+      bullet.addEventListener('click', () => {
+        const idx = parseInt(bullet.getAttribute('data-slide'), 10) || 0;
+        scrollToSlide(idx);
+      });
+    });
+
+    if (prevBtn) {
+      prevBtn.addEventListener('click', () => {
+        const card = projectsTrack.querySelector('.project-item-card');
+        const cardWidth = card ? card.offsetWidth : 300;
+        const isDesktop = window.innerWidth >= 992;
+        const step = isDesktop ? (cardWidth * 2 + 40) : (cardWidth + 20);
+        projectsTrack.scrollBy({ left: -step, behavior: 'smooth' });
+      });
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener('click', () => {
+        const card = projectsTrack.querySelector('.project-item-card');
+        const cardWidth = card ? card.offsetWidth : 300;
+        const isDesktop = window.innerWidth >= 992;
+        const step = isDesktop ? (cardWidth * 2 + 40) : (cardWidth + 20);
+        projectsTrack.scrollBy({ left: step, behavior: 'smooth' });
+      });
+    }
+
+    // Synchronize active bullet with swipe / scroll
+    let isTicking = false;
+    projectsTrack.addEventListener('scroll', () => {
+      if (!isTicking) {
+        requestAnimationFrame(() => {
+          const scrollLeft = projectsTrack.scrollLeft;
+          const maxScroll = projectsTrack.scrollWidth - projectsTrack.clientWidth;
+          if (maxScroll > 0 && projectBullets.length) {
+            const progress = Math.max(0, Math.min(1, scrollLeft / maxScroll));
+            const activeIndex = Math.min(
+              projectBullets.length - 1,
+              Math.round(progress * (projectBullets.length - 1))
+            );
+            projectBullets.forEach((b, i) => {
+              b.classList.toggle('active', i === activeIndex);
+            });
+          }
+          isTicking = false;
+        });
+        isTicking = true;
+      }
+    }, { passive: true });
+  }
 })();
