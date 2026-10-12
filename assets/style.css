@@ -854,6 +854,44 @@ select:focus-visible {
   width: 100%;
 }
 
+/* Work Experience Multi-image Gallery */
+.work-gallery-grid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+}
+
+.work-item-wide {
+  width: 100%;
+}
+
+.work-item-wide img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  border: 1px solid var(--border-card);
+  box-shadow: 0 8px 24px rgba(12, 43, 26, 0.12);
+  display: block;
+}
+
+.work-item-portrait {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.work-item-portrait img {
+  max-width: 230px;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  border: 1px solid var(--border-card);
+  box-shadow: 0 8px 24px rgba(12, 43, 26, 0.12);
+  display: block;
+}
+
 .project-copy {
   padding: 36px;
   display: flex;

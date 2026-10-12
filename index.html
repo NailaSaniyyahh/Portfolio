@@ -18,7 +18,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <!-- Minimalist Emerald Green Design System -->
-  <link rel="stylesheet" href="assets/style.css?v=6">
+  <link rel="stylesheet" href="assets/style.css?v=7">
 
   <!-- Calm Green Canvas Background -->
   <script src="assets/canvas-bg.js" defer></script>
@@ -132,9 +132,14 @@
           <article class="project-card">
             <div class="row g-0">
               <div class="col-md-6 project-visual">
-                <a href="issue-lens.html" aria-label="Read Issue Lens case study">
-                  <img src="assets/issue-lens-preview.jpg" alt="Issue Lens searchable issue tracker demo" width="1200" height="833" loading="lazy">
-                </a>
+                <div class="work-gallery-grid">
+                  <div class="work-item-wide">
+                    <img src="assets/work1.png" alt="Periplus Search Suggestion Overview" loading="lazy">
+                  </div>
+                  <div class="work-item-portrait">
+                    <img src="assets/work2.png" alt="Periplus Search Suggestion Query Flow" loading="lazy">
+                  </div>
+                </div>
               </div>
               <div class="col-md-6 project-copy">
                 <span class="eyebrow">01 / INTERNSHIP</span>
@@ -163,6 +168,112 @@
             </div>
           </article>
 
+        </div>
+      </section>
+
+      <section class="section" id="skills">
+        <div class="container">
+          <div class="section-top">
+            <div>
+              <h2>Featured Project</h2>
+            </div>
+            <p>
+              Grounded in computer science logic, data structures, and computer networks; applied directly to responsive web engineering.
+            </p>
+          </div>
+
+          <div class="skills-grid">
+
+            <!-- Domain 1: CS & Algorithms -->
+            <article class="skill-card">
+              <div class="skill-card-head">
+                <div class="skill-card-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="4 17 10 11 4 5"></polyline>
+                    <line x1="12" y1="19" x2="20" y2="19"></line>
+                  </svg>
+                </div>
+                <div>
+                  <span class="eyebrow mb-1">01 / FOUNDATIONS</span>
+                  <h3>Software &amp; Algorithms</h3>
+                </div>
+              </div>
+              <ul class="skill-items">
+                <li>Data Structures: Trees, Graphs, Hash Maps, Priority Queues</li>
+                <li>Algorithm Optimization &amp; Time/Space Complexity (Big-O)</li>
+                <li>Object-Oriented Programming (OOP) &amp; SOLID Design</li>
+                <li>Discrete Mathematics &amp; Relational Data Modeling</li>
+              </ul>
+            </article>
+
+            <!-- Domain 2: Modern Web -->
+            <article class="skill-card">
+              <div class="skill-card-head">
+                <div class="skill-card-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                    <line x1="8" y1="21" x2="16" y2="21"></line>
+                    <line x1="12" y1="17" x2="12" y2="21"></line>
+                  </svg>
+                </div>
+                <div>
+                  <span class="eyebrow mb-1">02 / CRAFT</span>
+                  <h3>Modern Web &amp; Frontend</h3>
+                </div>
+              </div>
+              <ul class="skill-items">
+                <li>Semantic HTML5, ARIA Standards &amp; WCAG 2.1 AA Accessibility</li>
+                <li>Modern CSS3: Custom Properties, Flexbox, CSS Grid</li>
+                <li>Vanilla ES6+ JavaScript: Async/Await, Canvas API, DOM Manipulation</li>
+                <li>Bootstrap 5 Customization &amp; Token Architecture</li>
+              </ul>
+            </article>
+
+            <!-- Domain 3: Systems & Networks -->
+            <article class="skill-card">
+              <div class="skill-card-head">
+                <div class="skill-card-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                    <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                    <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+                    <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+                  </svg>
+                </div>
+                <div>
+                  <span class="eyebrow mb-1">03 / NETWORKS</span>
+                  <h3>Systems &amp; Networking</h3>
+                </div>
+              </div>
+              <ul class="skill-items">
+                <li>Computer Networks: TCP/IP, HTTP/2, HTTP/3, WebSockets, DNS</li>
+                <li>Cloud Basics: AWS (S3, CloudFront, EC2, IAM Security)</li>
+                <li>Linux / Unix Environment &amp; Bash Shell Scripting</li>
+                <li>Git Version Control &amp; GitHub Collaborative Workflows</li>
+              </ul>
+            </article>
+
+            <!-- Domain 4: Quality & Tooling -->
+            <article class="skill-card">
+              <div class="skill-card-head">
+                <div class="skill-card-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                  </svg>
+                </div>
+                <div>
+                  <span class="eyebrow mb-1">04 / RIGOR</span>
+                  <h3>Quality &amp; Performance</h3>
+                </div>
+              </div>
+              <ul class="skill-items">
+                <li>Web Performance Profiling &amp; Core Web Vitals Auditing</li>
+                <li>Browser DevTools Memory Profiling &amp; DOM Optimization</li>
+                <li>Progressive Enhancement &amp; Defensive UX Error Handling</li>
+                <li>Clear Technical Documentation &amp; Architecture Notes</li>
+              </ul>
+            </article>
+
+          </div>
         </div>
       </section>
 
@@ -359,11 +470,6 @@
         </div>
       </section>
 
-      
-
-      <!-- =================================================================
-           TECHNICAL SKILLS SECTION
-           ================================================================= -->
       <section class="section" id="skills">
         <div class="container">
           <div class="section-top">
