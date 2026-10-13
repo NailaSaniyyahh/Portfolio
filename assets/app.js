@@ -116,74 +116,213 @@
     });
   }
 
-  // --- Projects Slider Interaction (Swipe & Bullets) ---
-  const projectsTrack = document.querySelector('#projects-track');
-  const projectBullets = document.querySelectorAll('#projects-pagination .pagination-bullet');
-  const prevBtn = document.querySelector('#projects-prev-btn');
-  const nextBtn = document.querySelector('#projects-next-btn');
+  // --- Projects Slider Interaction (Drag, Swipe, Navigation & Bullets) ---
+  function initProjectsSlider() {
+    const projectsTrack = document.querySelector('#projects-track');
+    if (!projectsTrack || projectsTrack.dataset.sliderReady === 'true') return;
+    projectsTrack.dataset.sliderReady = 'true';
 
-  if (projectsTrack) {
-    function scrollToSlide(slideIndex) {
-      const card = projectsTrack.querySelector('.project-item-card');
-      if (!card) return;
-      const cardWidth = card.offsetWidth;
-      const gap = 20;
-      const isDesktop = window.innerWidth >= 992;
-      const scrollStep = isDesktop ? (cardWidth * 2 + gap * 2) : (cardWidth + gap);
-      projectsTrack.scrollTo({
-        left: slideIndex * scrollStep,
-        behavior: 'smooth'
+    const projectBullets = Array.from(document.querySelectorAll('#projects-pagination .pagination-bullet'));
+    const prevBtn = document.querySelector('#projects-prev-btn');
+    const nextBtn = document.querySelector('#projects-next-btn');
+    const cards = Array.from(projectsTrack.querySelectorAll('.project-item-card'));
+
+    if (!cards.length) return;
+
+    let currentSlideIndex = 0;
+
+    function getTotalSlides() {
+      return projectBullets.length ? projectBullets.length : Math.max(1, Math.ceil(cards.length / 2));
+    }
+
+    function getCardIndexForSlide(slideIdx) {
+      return slideIdx * 2;
+    }
+
+    function updateBullets(activeIndex) {
+      projectBullets.forEach((bullet, idx) => {
+        const slideAttr = bullet.getAttribute('data-slide');
+        const slideIdx = slideAttr !== null ? parseInt(slideAttr, 10) : idx;
+        const isActive = (slideIdx === activeIndex) || (idx === activeIndex);
+        bullet.classList.toggle('active', isActive);
+        bullet.setAttribute('aria-current', isActive ? 'true' : 'false');
       });
     }
 
-    projectBullets.forEach((bullet) => {
-      bullet.addEventListener('click', () => {
-        const idx = parseInt(bullet.getAttribute('data-slide'), 10) || 0;
-        scrollToSlide(idx);
+    function goToSlide(slideIndex) {
+      const totalSlides = getTotalSlides();
+      let targetSlide = slideIndex;
+      if (targetSlide >= totalSlides) targetSlide = 0;
+      if (targetSlide < 0) targetSlide = totalSlides - 1;
+
+      currentSlideIndex = targetSlide;
+      updateBullets(currentSlideIndex);
+
+      const cardIdx = getCardIndexForSlide(targetSlide);
+      const targetCard = cards[cardIdx] || cards[0];
+
+      if (targetCard) {
+        const trackRect = projectsTrack.getBoundingClientRect();
+        const cardRect = targetCard.getBoundingClientRect();
+        const targetScrollLeft = projectsTrack.scrollLeft + (cardRect.left - trackRect.left);
+
+        projectsTrack.scrollTo({
+          left: targetScrollLeft,
+          behavior: 'smooth'
+        });
+      }
+    }
+
+    // Bullet clicks
+    projectBullets.forEach((bullet, idx) => {
+      bullet.addEventListener('click', (e) => {
+        e.preventDefault();
+        const slideAttr = bullet.getAttribute('data-slide');
+        const slideIdx = slideAttr !== null ? parseInt(slideAttr, 10) : idx;
+        goToSlide(isNaN(slideIdx) ? idx : slideIdx);
       });
     });
 
+    // Arrow buttons with wrap-around
     if (prevBtn) {
-      prevBtn.addEventListener('click', () => {
-        const card = projectsTrack.querySelector('.project-item-card');
-        const cardWidth = card ? card.offsetWidth : 300;
-        const isDesktop = window.innerWidth >= 992;
-        const step = isDesktop ? (cardWidth * 2 + 40) : (cardWidth + 20);
-        projectsTrack.scrollBy({ left: -step, behavior: 'smooth' });
+      prevBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        goToSlide(currentSlideIndex - 1);
       });
     }
 
     if (nextBtn) {
-      nextBtn.addEventListener('click', () => {
-        const card = projectsTrack.querySelector('.project-item-card');
-        const cardWidth = card ? card.offsetWidth : 300;
-        const isDesktop = window.innerWidth >= 992;
-        const step = isDesktop ? (cardWidth * 2 + 40) : (cardWidth + 20);
-        projectsTrack.scrollBy({ left: step, behavior: 'smooth' });
+      nextBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        goToSlide(currentSlideIndex + 1);
       });
     }
 
-    // Synchronize active bullet with swipe / scroll
-    let isTicking = false;
+    // Synchronize active bullet on scroll / swipe
+    let scrollTimeout;
     projectsTrack.addEventListener('scroll', () => {
-      if (!isTicking) {
-        requestAnimationFrame(() => {
-          const scrollLeft = projectsTrack.scrollLeft;
-          const maxScroll = projectsTrack.scrollWidth - projectsTrack.clientWidth;
-          if (maxScroll > 0 && projectBullets.length) {
-            const progress = Math.max(0, Math.min(1, scrollLeft / maxScroll));
-            const activeIndex = Math.min(
-              projectBullets.length - 1,
-              Math.round(progress * (projectBullets.length - 1))
-            );
-            projectBullets.forEach((b, i) => {
-              b.classList.toggle('active', i === activeIndex);
-            });
+      clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(() => {
+        const maxScroll = projectsTrack.scrollWidth - projectsTrack.clientWidth;
+        if (maxScroll <= 5) return;
+
+        // End-boundary check: activate last bullet when reaching end of track
+        if (projectsTrack.scrollLeft >= maxScroll - 35) {
+          currentSlideIndex = projectBullets.length ? projectBullets.length - 1 : 4;
+          updateBullets(currentSlideIndex);
+          return;
+        }
+
+        // Start-boundary check
+        if (projectsTrack.scrollLeft <= 25) {
+          currentSlideIndex = 0;
+          updateBullets(currentSlideIndex);
+          return;
+        }
+
+        const trackRect = projectsTrack.getBoundingClientRect();
+        let closestCardIdx = 0;
+        let minDiff = Infinity;
+
+        cards.forEach((card, idx) => {
+          const cardRect = card.getBoundingClientRect();
+          const diff = Math.abs(cardRect.left - trackRect.left);
+          if (diff < minDiff) {
+            minDiff = diff;
+            closestCardIdx = idx;
           }
-          isTicking = false;
         });
-        isTicking = true;
-      }
+
+        const calculatedSlide = Math.floor(closestCardIdx / 2);
+        const maxBulletIdx = projectBullets.length ? projectBullets.length - 1 : 4;
+        currentSlideIndex = Math.max(0, Math.min(maxBulletIdx, calculatedSlide));
+        updateBullets(currentSlideIndex);
+      }, 40);
     }, { passive: true });
+
+    // Mouse drag-to-scroll (desktop swipe)
+    let isDown = false;
+    let startX = 0;
+    let startScrollLeft = 0;
+    let hasDragged = false;
+
+    projectsTrack.addEventListener('mousedown', (e) => {
+      if (e.target.closest('a, button')) return;
+      isDown = true;
+      hasDragged = false;
+      startX = e.pageX - projectsTrack.offsetLeft;
+      startScrollLeft = projectsTrack.scrollLeft;
+      projectsTrack.classList.add('is-dragging');
+    });
+
+    const stopDragging = () => {
+      if (!isDown) return;
+      isDown = false;
+      projectsTrack.classList.remove('is-dragging');
+    };
+
+    window.addEventListener('mouseup', stopDragging);
+    projectsTrack.addEventListener('mouseleave', stopDragging);
+
+    projectsTrack.addEventListener('mousemove', (e) => {
+      if (!isDown) return;
+      e.preventDefault();
+      const x = e.pageX - projectsTrack.offsetLeft;
+      const walk = (x - startX) * 1.5;
+      if (Math.abs(walk) > 5) {
+        hasDragged = true;
+      }
+      projectsTrack.scrollLeft = startScrollLeft - walk;
+    });
+
+    // Prevent accidental click during drag
+    projectsTrack.addEventListener('click', (e) => {
+      if (hasDragged) {
+        e.preventDefault();
+        e.stopPropagation();
+        hasDragged = false;
+      }
+    }, true);
   }
+
+  // --- Skills Category Filter Tabs ---
+  function initSkillsFilter() {
+    const tabs = document.querySelectorAll('.skill-tab-btn');
+    const cards = document.querySelectorAll('#skills-grid .skill-card');
+    if (!tabs.length || !cards.length) return;
+
+    tabs.forEach((tab) => {
+      tab.addEventListener('click', () => {
+        const filter = tab.getAttribute('data-filter');
+        tabs.forEach((t) => t.classList.remove('active'));
+        tab.classList.add('active');
+
+        cards.forEach((card) => {
+          const cat = card.getAttribute('data-category');
+          if (filter === 'all' || cat === filter) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+  }
+
+  function initApp() {
+    initProjectsSlider();
+    initSkillsFilter();
+  }
+
+  // Initialize immediately and on DOMContentLoaded
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initApp);
+  } else {
+    initApp();
+  }
+
+  // Also expose to window for direct calls
+  window.initProjectsSlider = initProjectsSlider;
+  window.initSkillsFilter = initSkillsFilter;
 })();
+
